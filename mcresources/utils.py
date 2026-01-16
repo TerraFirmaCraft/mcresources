@@ -205,7 +205,7 @@ def item_predicate(data_in: Json) -> Json:
         return {'items': [resource_location(e).join() for e in data_in]}
     elif isinstance(data_in, str):  # Single item or tag
         item, tag, count, _ = parse_item_stack(data_in, False)
-        d: Json = {'tag': item} if tag else {'items': [item]}
+        d: Json = {'items': '#' + item} if tag else {'items': item}
         if count:
             d['count'] = count
         return d

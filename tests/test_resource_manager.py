@@ -93,7 +93,7 @@ def test_crafting_shapeless():
 def test_crafting_shaped():
     rm.crafting_shaped('my_block', ('XBX', 'X  ', '  B'), {'X': 'domain:my_item', 'B': 'minecraft:stone'}, 'domain:my_block').with_advancement('minecraft:dirt')
     assert_file_equal('data/modid/recipes/my_block.json')
-    assert_file_equal('data/modid/advancements/my_block.json')
+    assert_file_equal('data/modid/advancement/my_block.json')
 
 def test_recipe():
     pass
@@ -102,8 +102,8 @@ def test_advancements():
     category = advancements.AdvancementCategory(rm, 'my_category', 'background.png')
     root = category.advancement('root', 'domain:item', 'My Advancement Tree', 'The tree.', parent=None, criteria={'crit': advancements.first_tick()})
     root.add_child('child', 'domain:item', 'My Advancement Tree', 'The tree.', criteria={'crit1': advancements.inventory_changed('domain:sword'), 'crit2': advancements.inventory_changed('domain:axe')}, requirements='and', frame='challenge')
-    assert_file_equal('data/modid/advancements/my_category/root.json')
-    assert_file_equal('data/modid/advancements/my_category/root.json')
+    assert_file_equal('data/modid/advancement/my_category/root.json')
+    assert_file_equal('data/modid/advancement/my_category/root.json')
 
 def test_item_tag():
     rm.item_tag('my_items', 'modid:item1')

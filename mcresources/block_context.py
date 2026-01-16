@@ -214,7 +214,7 @@ class BlockContext:
         if bottom_texture is None:
             bottom_texture = bottom
 
-        self.rm.blockstate(door, variants=block_states.door_blockstate(bottom, bottom_hinge, top, top_hinge))
+        self.rm.blockstate(door, variants=block_states.door_blockstate(block))
         self.rm.block_model(door + '_bottom', {'top': top_texture, 'bottom': bottom_texture}, parent='block/door_bottom')
         self.rm.block_model(door + '_bottom_hinge', {'top': top_texture, 'bottom': bottom_texture}, parent='block/door_bottom_rh')
         self.rm.block_model(door + '_top', {'top': top_texture, 'bottom': bottom_texture}, parent='block/door_top')

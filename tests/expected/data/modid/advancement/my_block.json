@@ -3,15 +3,17 @@
   "parent": "minecraft:recipes/root",
   "criteria": {
     "has_item": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "minecraft:dirt"
-            ]
-          }
-        ]
+      "dirt": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:dirt"
+              ]
+            }
+          ]
+        }
       }
     },
     "has_the_recipe": {

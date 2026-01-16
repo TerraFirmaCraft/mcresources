@@ -3,27 +3,31 @@
   "parent": "modid:my_category/root",
   "criteria": {
     "crit1": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "domain:sword"
-            ]
-          }
-        ]
+      "sword": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "domain:sword"
+              ]
+            }
+          ]
+        }
       }
     },
     "crit2": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "domain:axe"
-            ]
-          }
-        ]
+      "axe": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "domain:axe"
+              ]
+            }
+          ]
+        }
       }
     }
   },

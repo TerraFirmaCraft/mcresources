@@ -285,7 +285,7 @@ class ResourceManager:
             requirements = [[k for k in criteria.keys()]]
         elif requirements == 'and':
             requirements = [[k] for k in criteria.keys()]
-        self.write(('data', res.domain, 'advancements', res.path), {
+        self.write(('data', res.domain, 'advancement', res.path), {
             'parent': parent,
             'criteria': criteria,
             'display': display,

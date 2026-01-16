@@ -1,1 +1,2 @@
-- Technical infrastructure update - no changes
+- Updated advancements generation for compatibility with 1.21.1
+- Fixed the default door blockstate generation.

@@ -50,7 +50,12 @@ class AdvancementContext:
         return self.category.advancement(name, icon, title, description, self.name, criteria, requirements, frame, toast, chat, hidden)
 
 
-def inventory_changed(*item_predicates: Json) -> Json:
+def inventory_changed(item: str | Json, name: str = 'item_obtained') -> Json:
+    if isinstance(item, str) and name == 'item_obtained':
+        name = item.split(':')[1]
+    return {name: inventory_changed_full(item)}
+
+def inventory_changed_full(*item_predicates: Json) -> Json:
     return {
         'trigger': 'minecraft:inventory_changed',
         'conditions': {
@@ -87,3 +92,10 @@ def consume_item(item: str) -> Json:
             'item': utils.item_predicate(item)
         }
     }
+
+def item_use_on_block(block: str, item: str, name: str = 'item_use_on_block_condition'):
+    block_json = {'tag': block[1:]} if block[0] == '#' else {'blocks': [block]}
+    return {name: {'trigger': 'minecraft:item_used_on_block', 'conditions': {
+        'location': {'block': block_json},
+        'item': {'items': [item]}
+    }}}
